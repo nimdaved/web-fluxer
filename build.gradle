@@ -1,0 +1,42 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.ab.wfluxer'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-webflux')	
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+    
+    compile('org.projectlombok:lombok:1.18.0')  
+	//runtime('com.h2database:h2')
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	runtime('org.hsqldb:hsqldb:2.3.2')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('io.projectreactor:reactor-test')
+	//Image load helper
+	testCompile('commons-io:commons-io:2.6')
+	testCompile('javax.servlet:javax.servlet-api:3.1.0')
+}
