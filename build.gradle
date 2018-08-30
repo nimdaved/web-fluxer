@@ -38,5 +38,4 @@ dependencies {
 	testCompile('io.projectreactor:reactor-test')
 	//Image load helper
 	testCompile('commons-io:commons-io:2.6')
-	testCompile('javax.servlet:javax.servlet-api:3.1.0')
 }
